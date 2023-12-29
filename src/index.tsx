@@ -8,6 +8,7 @@ export function App() {
 	const [count, setCount] = useState(0);
 
 	useEffect(() => {
+		console.log(`index.tsx MODE ${import.meta.env}`)
 		console.log(`index.tsx MODE ${import.meta.env.MODE}`)
 		console.log(`index.tsx VITE_TEST ${import.meta.env.VITE_TEST}`)
 	}, [])

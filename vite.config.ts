@@ -35,5 +35,11 @@ const pwa = VitePWA({
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [ preact(), pwa ],
+    logLevel: 'silent',
+	plugins: [ preact(), pwa, {
+        name: 'test',
+        configResolved(config) {
+            console.log(`process.env.NODE_ENV = ${process.env.NODE_ENV}; mode = ${config.mode}`)
+        }
+    } ],
 });
